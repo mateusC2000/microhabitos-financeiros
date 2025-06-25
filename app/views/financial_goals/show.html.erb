@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @financial_goal %>
+
+<div>
+  <%= link_to "Editar essa meta financeira", edit_financial_goal_path(@financial_goal) %> |
+  <%= link_to "Voltar às metas financeiras", financial_goals_path %>
+
+  <%= button_to "Deletar essa meta financeira", @financial_goal, method: :delete %>
+</div>

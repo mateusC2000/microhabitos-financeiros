@@ -1,0 +1,11 @@
+<% content_for :title, "Nova meta financeira" %>
+
+<h1>Nova meta financeira</h1>
+
+<%= render "form", financial_goal: @financial_goal %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar às metas financeiras", financial_goals_path %>
+</div>
