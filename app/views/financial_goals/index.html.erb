@@ -1,16 +1,21 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Metas financeiras" %>
-
-<h1>Metas financeiras</h1>
-
-<div id="financial_goals">
-  <% @financial_goals.each do |financial_goal| %>
-    <%= render financial_goal %>
-    <p>
-      <%= link_to "Ver esta meta financeira", financial_goal %>
-    </p>
+<div class="financial-goals-container">
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
   <% end %>
-</div>
 
-<%= link_to "Nova meta financeiras", new_financial_goal_path %>
+  <div class="page-header">
+    <h1>Metas financeiras</h1>
+    <%= link_to "Nova meta financeira", new_financial_goal_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="financial-goals-list">
+    <% @financial_goals.each do |financial_goal| %>
+      <div class="financial-goal-item">
+        <%= render financial_goal %>
+        <div class="card-actions">
+          <%= link_to "Ver detalhes", financial_goal, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

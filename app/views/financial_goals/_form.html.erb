@@ -1,6 +1,6 @@
-<%= form_with(model: financial_goal) do |form| %>
+<%= form_with(model: financial_goal, class: "financial-goal-form") do |form| %>
   <% if financial_goal.errors.any? %>
-    <div style="color: red">
+    <div class="error-messages">
       <h2><%= pluralize(financial_goal.errors.count, "erro") %> impediram este objetivo financeiro de ser salvo:</h2>
 
       <ul>
@@ -12,31 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :title, "Título", style: "display: block" %>
+    <%= form.label :title, "Título" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :description, "Descrição", style: "display: block" %>
+    <%= form.label :description, "Descrição" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :target_value, "Valor necessário", style: "display: block" %>
-    <%= form.text_field :target_value %>
+    <%= form.label :target_value, "Valor necessário" %>
+    <%= form.number_field :target_value, step: 0.01 %>
   </div>
 
   <div>
-    <%= form.label :due_date, "Data final", style: "display: block" %>
+    <%= form.label :due_date, "Data final" %>
     <%= form.date_field :due_date %>
   </div>
 
   <div>
-    <%= form.label :user_id, "ID do usuário", style: "display: block" %>
+    <%= form.label :user_id, "ID do usuário" %>
     <%= form.number_field :user_id %>
   </div>
 
-  <div>
-    <%= form.submit "Salvar" %>
+  <div class="actions">
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
   </div>
 <% end %>

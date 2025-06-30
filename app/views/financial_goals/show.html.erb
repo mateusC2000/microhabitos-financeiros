@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<div class="financial-goals-container">
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
 
-<%= render @financial_goal %>
+  <%= render @financial_goal %>
 
-<div>
-  <%= link_to "Editar essa meta financeira", edit_financial_goal_path(@financial_goal) %> |
-  <%= link_to "Voltar às metas financeiras", financial_goals_path %>
-
-  <%= button_to "Deletar essa meta financeira", @financial_goal, method: :delete %>
+  <div class="action-links">
+    <%= link_to "Editar meta financeira", edit_financial_goal_path(@financial_goal), class: "btn btn-secondary" %>
+    <%= link_to "Voltar às metas financeiras", financial_goals_path, class: "btn btn-secondary" %>
+    <%= button_to "Deletar meta financeira", @financial_goal, method: :delete, 
+          class: "btn btn-danger", 
+          form: { data: { turbo_confirm: "Tem certeza que deseja deletar esta meta financeira?" } } %>
+  </div>
 </div>

@@ -1,0 +1,308 @@
+:root {
+  --primary: #6c5ce7;
+  --primary-hover: #5649c0;
+  --secondary: #00cec9;
+  --accent: #fd79a8;
+  --success: #00b894;
+  --danger: #d63031;
+  --warning: #fdcb6e;
+  --dark: #2d3436;
+  --light: #f5f6fa;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --card-bg: #ffffff;
+  --form-bg: #ffffff;
+}
+
+/* Estilos base */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Container principal */
+.financial-goals-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Cards de metas - Design moderno com gradiente */
+.financial-goal-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin-bottom: 0;
+  border-top: 4px solid var(--primary);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.financial-goal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.financial-goal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.financial-goal-card p {
+  margin: 0.75rem 0;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.financial-goal-card strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Progresso visual (opcional) */
+.goal-progress {
+  height: 6px;
+  background: #dfe6e9;
+  border-radius: 3px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.goal-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+/* Formulário moderno */
+.financial-goal-form {
+  background: var(--form-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-top: 4px solid var(--primary);
+}
+
+.financial-goal-form div {
+  margin-bottom: 1.5rem;
+}
+
+.financial-goal-form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.financial-goal-form input[type="text"],
+.financial-goal-form input[type="number"],
+.financial-goal-form input[type="date"],
+.financial-goal-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.financial-goal-form input[type="text"]:focus,
+.financial-goal-form input[type="number"]:focus,
+.financial-goal-form input[type="date"]:focus,
+.financial-goal-form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.2);
+  background-color: white;
+}
+
+.financial-goal-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Botões modernos com efeitos */
+.btn {
+  margin: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn i {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(108, 92, 231, 0.25);
+  background: linear-gradient(135deg, var(--primary-hover), #00b5b2);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(108, 92, 231, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger), #ff7675);
+  color: white;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(214, 48, 49, 0.25);
+  background: linear-gradient(135deg, #c23636, #e84393);
+}
+
+/* Header moderno */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-header h1 {
+  color: var(--text);
+  font-size: 2.25rem;
+  margin: 0;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Lista de metas em grid */
+.financial-goals-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.financial-goal-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-actions {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Mensagens de notificação modernas */
+.notice {
+  background: linear-gradient(90deg, var(--success), #55efc4);
+  color: white;
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.notice::before {
+  content: "✓";
+  font-weight: bold;
+}
+
+.error-messages {
+  background: linear-gradient(90deg, var(--danger), #ff7675);
+  color: white;
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.error-messages h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.error-messages ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* Efeitos visuais adicionais */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .financial-goals-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .financial-goal-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Ícones (adicione Font Awesome no seu layout) */
+.icon {
+  width: 24px;
+  height: 24px;
+}

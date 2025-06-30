@@ -1,12 +1,14 @@
-<% content_for :title, "Editing financial goal" %>
+<div class="financial-goals-container">
+  <% content_for :title, "Editing financial goal" %>
 
-<h1>Editing financial goal</h1>
+  <div class="page-header">
+    <h1>Editar meta financeira</h1>
+  </div>
 
-<%= render "form", financial_goal: @financial_goal %>
+  <%= render "form", financial_goal: @financial_goal %>
 
-<br>
-
-<div>
-  <%= link_to "Ver esta meta financeira", @financial_goal %> |
-  <%= link_to "Voltar às metas financeiras", financial_goals_path %>
+  <div class="action-links">
+    <%= link_to "Ver esta meta financeira", @financial_goal, class: "btn btn-secondary" %>
+    <%= link_to "Voltar às metas financeiras", financial_goals_path, class: "btn btn-secondary" %>
+  </div>
 </div>
